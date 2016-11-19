@@ -165,133 +165,76 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header text-center">INSTALACIÓN SERVIDOR LAMP EN CENTOS 7 MINIMAL</h1>
+                    <h1 class="page-header text-center">DESPLIEGUE Y MIGRACION DE APLICACIONES WEB A TRAVES DE DOCKERS</h1>
                     <div class="container-fluid">
-                <p align="justify">Para la instalación y configuración de un servidor LAMP en Centos 7 Minimal se siguen los siguientes pasos:</p><br>
-
-                <p align="justify"> <strong> 1. </strong>     Primero actualizamos nuestra máquina virtual para eso utilizamos el comando <strong>“yum –y update”</strong>.</p><br>
+                <p align="justify">Docker es un entorno virtual basado en los contenedores de Linux LXC, los cuales crean su propio espacio de procesos y nombres a través de la virtualización a nivel de software. Esta técnica permite que los contenedores aíslen sus procesos y recursos de una manera más simple y eficiente que una máquina virtual, y tiene como objetivo principal la instalación de un sistema operativo estándar sobre el cual correrán los diferentes contenedores y sus aplicaciones de forma independiente, pero compartiendo el mismo kernel del host base.
+                A nivel de funcionalidad, Docker contiene una pieza de software en un archivo del sistema que contiene todo lo necesario para la ejecución del código, tiempo de ejecución, herramientas del sistema, librerías y todo lo que se pueda instalar tanto para la aplicación y el servidor; lo cual garantiza que el software siempre se ejecutará de la misma manera sin importar el entorno en el cual se encuentre en ejecución. En comparación con una máquina virtual, Docker comparte el mismo enfoque de aislamiento de procesos, pero se orienta arquitectónicamente de una forma distinta que permite a los contenedores ser más portables y eficientes.</p><br>
 
                     <OL>
-                            <P align="center"> <img src="../images/LampCentos/1.png" srcset="../images/LampCentos/1.png 1200w,"><br></P>
+                            <P align="center"> <img src="../images/ConceptoDockers/1.jpg" srcset="../images/ConceptoDockers/1.jpg 1200w,"><br></P>
                         </OL>
 
                             <div class="bajar"></div>
 
-                            <p align="justify"> <strong> 2. </strong>     Instalamos apache2 quien cumple con la función del servidor web y nos permite la interpretación de las paginas HTML.</p><br>
+                            <p align="justify">La arquitectura docker se basa en la virtualización de un sistema operativo el cual actuará como un host, sobre el cual se instalará el motor base de docker. Docker permitirá la instalación de diferentes contenedores con sus librerías y archivos binarios para la ejecución de las imágenes que contendrán las distintas aplicaciones a desplegar.</p><br>
 
                     <OL>
-                            <P align="center"> <img src="../images/LampCentos/1.png" srcset="../images/LampCentos/1.png 1200w,"><br></P>
+                            <P align="center"> <img src="../images/ConceptoDockers/2.jpg" srcset="../images/ConceptoDockers/2.jpg 1200w,"><br></P>
                         </OL>
 
                             <div class="bajar"></div>
 
-                            <p align="justify"> <strong> 3. </strong>     Iniciamos el servicio con el siguiente comando <strong>“systemctl start httpd.service”</strong>.</p><br>
+                            <p align="justify">Para la creación de una imagen docker se utiliza un archivo llamado Dockerfile el cual es un documento de texto que contiene todas las instrucciones y líneas de comando de la instalación de los paquetes. La estructura básica de este archivo es la siguiente: </p><br>
 
                     <OL>
-                            <P align="center"> <img src="../images/LampCentos/3.png" srcset="../images/LampCentos/3.png 1200w,"><br></P>
+                            <P align="center"> <img src="../images/ConceptoDockers/3.png" srcset="../images/ConceptoDockers/3.png 1200w,"><br></P>
                         </OL>
 
                             <div class="bajar"></div>
 
-                            <p align="justify"> <strong> 4. </strong>     Ejecutamos el comando <strong>“systemctl enable httpd.service”</strong> con el fin de que cada vez que se reinicie la maquina el servicio inicie automáticamente.</p><br>
+                            <p align="justify">Los comandos más utilizados en la configuración del archivo Dockerfile son los siguientes: </p><br>
 
-                    <OL>
-                            <P align="center"> <img src="../images/LampCentos/4.png" srcset="../images/LampCentos/4.png 1200w,"><br></P>
+                            <ul justify style="list-style-image: url(../images/icono.png);">
+                                <li justify><strong>FROM: </strong>Se encuentra en la primera línea del documento y se encarga de obtener la imagen base sobre la cual se ejecutará el contenedor. Este comando varias veces en el mismo archivo docker.</li>
+                             </ul>
+
+                              <ul justify style="list-style-image: url(../images/icono.png);">
+                                <li justify><strong>MAINTAINER: </strong>Esta instrucción permite guardar la instrucción del archivo docker.</li>
+                             </ul>
+
+                             <ul justify style="list-style-image: url(../images/icono.png);">
+                                <li justify><strong>RUN: </strong>Se encarga de ejecutar cualquier comando en la imagen instalada. Se usa principalmente para la instalación de paquetess.</li>
+                             </ul>
+
+                              <ul justify style="list-style-image: url(../images/icono.png);">
+                                <li justify><strong>CMD: </strong>Su función es parecida a la del comando RUN a diferencia que solo se puede ejecutar solo una vez en el Dockerfile. Se utiliza principalmente para la ejecución de programas, demonios, scripts, etc.</li>
+                             </ul>
+
+                             <ul justify style="list-style-image: url(../images/icono.png);">
+                                <li justify><strong>EXPOSE: </strong>En este comando se especifica el puerto mediante el cual va a escuchar el contenedor.</li>
+                             </ul>
+
+                             <ul justify style="list-style-image: url(../images/icono.png);">
+                                <li justify><strong>ADD: </strong>Este comando copia archivos, directorios o archivos remotos y los añade en la ruta especificad del contenedor.</li>
+                             </ul>
+
+                              <ul justify style="list-style-image: url(../images/icono.png);">
+                                <li justify><strong>COPY: </strong>cumple la misma función del comando ADD con la diferencia de que no permite urls sino solo archivos locales.</li>
+                             </ul>
+
+                              <ul justify style="list-style-image: url(../images/icono.png);">
+                                <li justify><strong>ENTRYPOINT: </strong>Permite ejecutar un contenedor como un ejecutable con o sin parámetros.</li>
+                             </ul>
+
+                              <ul justify style="list-style-image: url(../images/icono.png);">
+                                <li justify><strong>WORKDIR: </strong>Especifica el directorio de trabajo para los comandos RUN, CMD, ENTRYPOINT, COPY y ADD.</li>
+                             </ul>
+
+                     <OL>
+                            <P align="center"> <img src="../images/ConceptoDockers/4.png" srcset="../images/ConceptoDockers/4.png 1200w,"><br></P>
                         </OL>
 
                             <div class="bajar"></div>
-
-                            <p align="justify"> <strong> 5. </strong>     Con el comando “systemctl status httpd.service” podemos ver el estado del servidor.</p><br>
-
-                    <OL>
-                            <P align="center"> <img src="../images/LampCentos/5.png" srcset="../images/LampCentos/5.png 1200w,"><br></P>
-                        </OL>
-
-                            <div class="bajar"></div>
-
-                            <p align="justify"> <strong> 6. </strong>     Abrimos el navegador y digitamos la IP de nuestro servidor en la barra de navegación en este caso la IP es <strong>“149.202.3.60”</strong> Si apache ha quedado bien instalado vera el archivo de bienvenida de apache.</p><br>
-
-                    <OL>
-                            <P align="center"> <img src="../images/LampCentos/6.png" srcset="../images/LampCentos/6.png 1200w,"><br></P>
-                        </OL>
-
-                            <div class="bajar"></div>
-
-                            <p align="justify"> <strong> 7. </strong>      Procedemos a realizar la instalación del gestor de bases de datos <strong>“MySQL (MariaDB)”</strong> , mediante el siguiente comando <strong>“yum install mariadb-serve mariadb”</strong>.</p><br>
-
-                    <OL>
-                            <P align="center"> <img src="../images/LampCentos/7.png" srcset="../images/LampCentos/7.png 1200w,"><br></P>
-                        </OL>
-
-                            <div class="bajar"></div>
-
-                            <p align="justify"> <strong> 8. </strong>      Iniciamos el servicio con el siguiente comando <strong>“systemctl start mariadb”</strong> y verificamos el estado del servicio <strong>“systemctl status httpd.service”</strong>.</p><br>
-
-                    <OL>
-                            <P align="center"> <img src="../images/LampCentos/8.png" srcset="../images/LampCentos/8.png 1200w,"><br></P>
-                        </OL>
-
-                            <div class="bajar"></div>
-
-                            <p align="justify"> <strong> 9. </strong>      Al instalar gestor de base de datos se instala sin una contraseña se puede ver con el siguiente comando <strong>“mysql -uroot”</strong>.</p><br>
-
-                    <OL>
-                            <P align="center"> <img src="../images/LampCentos/9.png" srcset="../images/LampCentos/9.png 1200w,"><br></P>
-                        </OL>
-
-                            <div class="bajar"></div>
-
-                             <p align="justify"> <strong> 10. </strong>      Se procede a configura una contraseña al gestor de base de datos para eso se utiliza el siguiente comando <strong>“mysql_secure_installation”</strong>.</p><br>
-
-                    <OL>
-                            <P align="center"> <img src="../images/LampCentos/10.png" srcset="../images/LampCentos/10.png 1200w,"><br></P>
-                        </OL>
-
-                            <div class="bajar"></div>
-
-                            <p align="justify"> <strong> 11. </strong>      Ejecutamos el comando <strong>“systemctl enable mariadb.service”</strong> con el fin de que cada vez que reiniciemos la maquina el servicio inicie automáticamente.</p><br>
-
-                    <OL>
-                            <P align="center"> <img src="../images/LampCentos/11.png" srcset="../images/LampCentos/11.png 1200w,"><br></P>
-                        </OL>
-
-                            <div class="bajar"></div>
-
-                            <p align="justify"> <strong> 12. </strong>      Instalamos php7, primero se agrega el repositorio mediante el comando <strong>“yum install -y” https://centos7.iuscommunity.org/ius-release.rpm”</strong>.</p><br>
-
-                    <OL>
-                            <P align="center"> <img src="../images/LampCentos/12.png" srcset="../images/LampCentos/12.png 1200w,"><br></P>
-                        </OL>
-
-                            <div class="bajar"></div>
-
-                            <p align="justify"> <strong> 13. </strong>      Instalar los complementos de PHP 7.</p><br>
-
-                    <OL>
-                            <P align="center"> <img src="../images/LampCentos/13.png" srcset="../images/LampCentos/13.png 1200w,"><br></P>
-                        </OL>
-
-                            <div class="bajar"></div>
-
-                            <p align="justify"> <strong> 14. </strong>      Por ultimo para comprobar que PHP ha quedado correctamente instalado en la ruta /home/var/www/html   se crea un archivo de en cual debe contener la siguiente estructura. 
-                            <P align="center"> <img src="../images/LampCentos/14.png" srcset="../images/LampCentos/14.png 1200w,"><br></P>
-                            Y debe ser guardada con la extensión (php). Luego en el navegador se digita la dirección IP de la maquina más el nombre de archivo creado con anterioridad <strong>“149.202.3.60/test.php”</strong>.</p><br>
-
-                    <OL>
-                            <P align="center"> <img src="../images/LampCentos/15.png" srcset="../images/LampCentos/15.png 1200w,"><br></P>
-                        </OL>
-
-                         <div class="container-fluid">
-                             <blockquote>
-
-                            <p><span class="Nota">Nota:</span>Si esto sucede hemos culminado de manera correcta la instalación de nuestro servidor LAMP en la máquina de Centos 7 Minimal.</p>
-                            </blockquote>
-
-                        </div>
-
-                            <div class="bajar"></div>
-
-
                             
 
                 </div>

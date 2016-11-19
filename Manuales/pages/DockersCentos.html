@@ -143,7 +143,7 @@
                                     <a href="ConceptoDockers.html">Conceptualizacion</a>
                                 </li>
                                 <li>
-                                    <a href="#"></i>Instalacion<span class="fa arrow"></span></a>
+                                     <a href="#"></i>Instalacion<span class="fa arrow"></span></a>
                                         <ul class="nav nav-second-level">
                                              <li>
                                                 <a href="DockersUbuntu.html">Ubuntu Server 16.04</a>
@@ -165,160 +165,99 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header text-center">CENTOS 7 MINIMAL</h1>
+                    <h1 class="page-header text-center">INSTALACION DE DOCKER EN CENTOS 7 MINIMAL</h1>
                     <div class="container-fluid">
-                <p align="justify">Para la configuración de una IP estática en Centos 7 Minimal se siguen los siguientes pasos:</p><br>
+                <p align="justify">Para la instalación de docker en el sistema operativo Centos 7 Minimal se debe tener en cuenta los siguientes requerimientos: </p><br>
 
-                <p align="justify"> <strong> 1. </strong>     Apagamos la maquina Centos.</p> <br>
+                <ul>
+                    <li>Docker brinda soporte a la versión 7.x del sistema operativo Centos.</li><br>
+                    <li>Docker requiere de un sistema operativo de 64 Bits para cualquier versión del mismo, de igual manera la versión del kernel debe ser mayor o igual a 3.10, ya que los núcleos menores a este carecen de funciones y condiciones necesarias para ejecutar los contenedores.</li><br>
+                 </ul>
+
+                    <p align="justify">Para verificar la versión del kernel de tu sistema ejecutamos el comando</p><br>
 
                     <OL>
-                            <P align="center"> <img src="../images/IPCentos/1.png" srcset="../images/IPCentos/1.png 1200w,"><br></P>
+                            <code>$ uname -r</code> 
+                            <div class="bajar"></div>
+                        </OL>
+
+                <p align="justify">Ahora se procede a realizar la instalación de dockers:</p><br>
+               
+                <p align="justify"> <strong> 1. </strong>    Nos aseguramos que estamos trabajando como súper usuario y actualizamos el sistema.</p><br>
+
+                <OL>
+                            <code>$ sudo su</code>
+                            <div class="bajar"></div>
+                            <code># apt-get update</code> 
+                            <div class="bajar"></div>
                         </OL>
 
                             <div class="bajar"></div>
-                <p align="justify"><strong>2. </strong>       Seleccionamos Hardware y la tarjeta de red para hacer el cambio de la Mac virtual.</strong></p><br>
+
+                <p align="justify"> <strong> 2. </strong>    Añadimos un nuevo repositorio docker al gestor de paquetes YUM por medio del comando tee en la ruta <strong>“/etc/yum.repos.d/docker.repo”</strong>.</p><br>
 
                  <OL>
-                              <P align="center"> <img src="../images/IPCentos/2.png" srcset="../images/IPCentos/2.png 1200w,"><br></P>
-                            </OL>
+                            <code># tee /etc/yum.repos.d/docker.repo <<-‘EOF’</code> 
+                            <div class="bajar"></div>
+                        </OL>
+                    <OL>
+                            <P align="center"> <img src="../images/DockersCentos/1.png" srcset="../images/DockersCentos/1.png 1200w,"><br></P>
+                        </OL>
 
                             <div class="bajar"></div>
 
-                            <p align="justify"><strong>3. </strong>     Aparecerá una ventana en la cual debemos cambiar la Mac que el servidor asignó automáticamente por la Mac virtual de la IP a asignar.</p><br>
+                <div class="container-fluid">
+                             <blockquote>
 
-                            <p align="justify"><strong>a. </strong>     Cuando se crea una máquina virtual el servidor le asigna automáticamente su Mac física.</p><br>
+                            <p><span class="Nota">Nota:</span>dentro del archivo “docker.repo” ingresamos la siguiente información:</p>
+                            <ul>
+                                <li>[dockerrepo]</li>
+                                <li>[name=Docker Repository]</li>
+                                <li>[baseurl=https://yum.dockerproject.org/repo/main/centos/7/]</li>
+                                <li>[enabled=1]</li>
+                                <li>[gpgcheck=1]</li>
+                                <li>[gpgkey=https://yum.dockerproject.org/gpg]</li>
+                                <li>[EOF]</li>
+                            </ul>
+                            </blockquote>
+                        </div>
 
-                            <p align="justify"><strong>b. </strong>     Para que la máquina virtual pueda tener internet a través de la IP pública se debe cambiar la Mac predeterminada por una Mac virtual de la IP.</p><br>
 
-                            <p align="justify"><strong>c. </strong>     Para crear la Mac virtual se debe realizar en el panel de administración donde se contrató el lote de IP’s.</p><br>
+                <p align="justify"> <strong> 3. </strong>    Instalamos Docker mediante el comando <strong> # yum install docker-engine</strong>.</p><br>
 
-                 <OL>
-                            <P align="center"> <img src="../images/IPCentos/3.png" srcset="../images/IPCentos/3.png 1200w,"><br></P>
-                            </OL>
-
-                            <div class="bajar"></div>
-
-                            <p align="justify"><strong>4. </strong>     Inicia la máquina virtual, corroboramos que estemos en superusuario y buscamos en nombre de nuestra tarjeta de red. Para ver el nombre de la tarjeta lo hacemos con el siguiente comando <strong>“ip addr”</strong>.</p><br>
-
-                            <OL>
-                             <P align="center"> <img src="../images/IPCentos/4.png" srcset="../images/IPCentos/4.png 1200w,"><br></P>
-                            </OL>
-
-                            <div class="bajar"></div>
-
-                             <p align="justify"> <strong> 5. </strong>   Entramos a configurar el archivo de IP, que se encuentra en la siguiente ruta <strong>“vi /etc/sysconfig/network-scripts/ifcfg-ens18”</strong>. Para hacer esta configuración utilizamos el editor de texto <strong>“vi”</strong>.</p><br>
-
-                 <OL>
-                            <P align="center"> <img src="../images/IPCentos/5.png" srcset="../images/IPCentos/5.png 1200w,"><br></P>
-                            </OL>
+                    <OL>
+                            <P align="center"> <img src="../images/DockersCentos/2.png" srcset="../images/DockersCentos/2.png 1200w,"><br></P>
+                        </OL>
 
                             <div class="bajar"></div>
 
-                            <p align="justify"><strong>6. </strong>      Unas ves dentro del archivo de configuración agregamos las siguientes líneas.</p><br>
+                <p align="justify"> <strong> 4. </strong>      Habilitamos el servicio Docker para que arranque automáticamente con el inicio del sistema mediante el comando <strong># systemctl enable docker.service</strong>.</p><br>
 
-                 <OL>
-                              <P align="center"> <img src="../images/IPCentos/6.png" srcset="../images/IPCentos/6.png 1200w,"><br></P>
-                            </OL>
-
-                            <p align="justify">La configuración a realizar es la siguiente:</p><br>
-
-                            <p align="justify"><strong>a. </strong>     ONBOOT=yes.</p><br>
-
-                            <p align="justify"><strong>b. </strong>     OOTPROTO=none.</p><br>
-
-                            <p align="justify"><strong>c. </strong>     IPADDR=149.202.3.60</p><br>
-
-                            <p align="justify"><strong>d. </strong>     NETMASK=255.255.255.255</p><br>
-
-                            <p align="justify"><strong>e. </strong>     GATEWAY=91.121.89.254</p><br>
-
-                            <p align="justify"><strong>f. </strong>     HWADDR=02:00:00:5a:d7:9c</p><br>
-
-                            <p align="justify"><strong>g. </strong>     DNS1=213.186.33.99</p><br>
-
-                            <p align="justify"><strong>h. </strong>     91.121.89.254 es la Gateway de la máquina virtual, la cual es la IP principal del servidor terminado el último octeto en 254.</p><br>
-
-                            <p align="justify"><strong>i. </strong>     El DNS agregado es el que traer por defecto la empresa donde se contrató el servidor físico.</p><br>
-
-    
-                            <div class="bajar"></div>
-
-                        <p align="justify"><strong>7. </strong>       Para configurar la Gateway se crea el archivo <strong>“route-ens18”</strong> en la siguiente ruta <strong>“vi /etc/sysconfig/network-scripts/route-ens18”</strong>.</p><br>
-
-
-                 <OL>
-                           <P align="center"> <img src="../images/IPCentos/7.png" srcset="../images/IPCentos/7.png 1200w,"><br></P>
-                            </OL>
+                    <OL>
+                            <P align="center"> <img src="../images/DockersCentos/3.png" srcset="../images/DockersCentos/3.png 1200w,"><br></P>
+                        </OL>
 
                             <div class="bajar"></div>
 
-                             <p align="justify"><strong>8. </strong>   En el archivo <strong>“route-ens18”</strong> procedemos a agregar las siguientes líneas. </p><br>
+                <p align="justify"> <strong> 5. </strong>       Iniciamos el demonio de Docker por medio del comando <strong># systemctl start docker</strong>.</p><br>
 
-
-                 <OL>
-                              <P align="center"> <img src="../images/IPCentos/8.png" srcset="../images/IPCentos/8.png 1200w,"><br></P>
-                            </OL>
-
-                            <p align="justify"><strong>a. </strong>     91.121.89.254 – 255.255.255.255 ens18</p><br>
-
-                            <p align="justify"><strong>b. </strong>     91.121.89.0 – 255.255.255.0 ens18</p><br>
-
-                            <p align="justify"><strong>c. </strong>     default 91.121.89.254</p><br>
-
-                            <p align="justify"><strong>d. </strong>     91.121.89.254 es la Gateway de la máquina virtual, la cual es la IP principal del servidor terminado el último octeto en 254.</p><br>
-
-                            <p align="justify"><strong>e. </strong>     91.121.89.0 es la red de la máquina virtual, la cual es la IP principal del servidor terminando el último octeto en 0.
-
-</p><br>
+                    <OL>
+                            <P align="center"> <img src="../images/DockersCentos/4.png" srcset="../images/DockersCentos/4.png 1200w,"><br></P>
+                        </OL>
 
                             <div class="bajar"></div>
 
-                         <p align="justify"><strong>9. </strong>      Reiniciamos la tarjeta de red con el comando <strong>“service network restart”</strong>.</p><br>
+                <p align="justify"> <strong> 6. </strong>    Verificamos si Docker fue instalado correctamente corriendo una imagen de prueba en un contenedor usando el comando .</p><br>
 
-
-                 <OL>
-                            <P align="center"> <img src="../images/IPCentos/9.png" srcset="../images/IPCentos/9.png 1200w,"><br></P>
-                            </OL>
-
+                <OL>
+                            <code># docker run –rm hello-world</code> 
                             <div class="bajar"></div>
-
-                            <p align="justify"><strong>10. </strong>   Comprobamos que los cambios se hayan hecho correctamente, para esto utilizamos el comando <strong>“ip addr”</strong>.</p><br>
-
-
-                 <OL>
-                           <P align="center"> <img src="../images/IPCentos/10.png" srcset="../images/IPCentos/10.png 1200w,"><br></P>
-                            </OL>
-
+                        </OL>
+                    <OL>
+                            <P align="center"> <img src="../images/DockersCentos/5.png" srcset="../images/DockersCentos/5.png 1200w,"><br></P>
+                        </OL>
+                        
                             <div class="bajar"></div>
-
-                            <p align="justify"><strong>11. </strong>    Comprobamos que la máquina virtual tenga conexión a internet para hacemos tecleamos el siguiente comando <strong>“ping google.com”</strong>.</p><br>
-
-
-                 <OL>
-                           <P align="center"> <img src="../images/IPCentos/11.png" srcset="../images/IPCentos/11.png 1200w,"><br></P>
-                            </OL>
-
-                            <div class="bajar"></div>
-
-                             <p align="justify"><strong>12. </strong>    Hacemos una conexión remota al servidor para eso utilizamos una maquina <strong>Windows con PuTTY</strong> instalado. En <strong>Host Name</strong> agregamos la IP de la máquina virtual, verificamos que la conexión sea por SSH, y damos en <strong>Open</strong>.</p><br>
-
-
-                 <OL>
-                           <P align="center"> <img src="../images/IPCentos/12.png" srcset="../images/IPCentos/12.png 1200w,"><br></P>
-                            </OL>
-
-                            <div class="bajar"></div>
-
-                            <p align="justify"><strong>13. </strong>    Seguimos a loguearnos colocando el usuario de la máquina y la contraseña, y una vez hecho este paso ya estaremos en nuestra maquina Centos 7 Minimal.</p><br>
-
-
-                 <OL>
-                           <P align="center"> <img src="../images/IPCentos/13.png" srcset="../images/IPCentos/13.png 1200w,"><br></P>
-                            </OL>
-
-                            <div class="bajar"></div>
-
-
 
                 </div>
                 <!-- /.col-lg-12 -->
