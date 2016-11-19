@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="Mayte"content="">
+
+    <title>Virtualizacion</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0" >
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+
+
+                </button>
+                <a class="navbar-brand">Virtualizacion de Servidores</a>
+
+            </div>
+            <!-- /.navbar-header -->
+            
+
+            <div class="bajar"></div>
+            <div class="navbar-default2 sidebar" role="navigation">
+
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                    
+
+                        
+                        <li>
+                            <a href="index.html"></i>Inicio</a>
+                        </li>
+                        <li>
+                            <a href="#"></i>Proxmox<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="Concepto.html">Conceptualización</a>
+                                </li>
+                                <li>
+                                    <a href="InstalacionProxmox.html">Instalción</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="creacionmv.html"></i>Creacion de Maquina Virtual</a>
+
+                        </li>
+                        <li>
+                            <a href="#"></i>Instalacion del Sistema Operativo<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="ConceptoMV.html">Conceptos de maquina virtual</a>
+                                </li>
+                                <li>
+                                    <a href="InstalacionUbuntuServer.html">Ubuntu Server 16.04</a>
+                                </li>
+                                <li>
+                                    <a href="InstalacionCentosServer.html">Centos Minimal 7</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"></i>Configuracion IP estatica<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="IPUbuntuServer.html">Ubuntu Server 16.04</a>
+                                </li>
+                                <li>
+                                    <a href="IPCentosServer.html">Centos Minimal 7</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"></i>Instalacion del Servidor LAMP<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#">Ubuntu Server 16.04</a>
+                                </li>
+                                <li>
+                                    <a href="#">Centos Minimal 7</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"></i>Instalcion del Servidor FTP<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="FtpUbuntuServer.html">Ubuntu Server 16.04</a>
+                                </li>
+                                <li>
+                                    <a href="FtpCentosServer.html">Centos Minimal 7</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"></i>Dockers<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#">Conceptualizacion</a>
+                                </li>
+                                <li>
+                                    <a href="#">Instalacion</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                      <li>
+                            <a href="#"></i>Autores</a>
+                        </li>  
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header text-center">Creacion Maquina Virtual</h1>
+                    <div class="container-fluid">
+                <p align="justify">Una máquina virtual es un software que simula una computadora real (Lescano, 2016), en la cual se incluyen las tarjetas de red, memoria RAM, disco duro, sistema operativo, núcleos de procesamiento entre otros más aspectos. Cada máquina virtual se encuentra limitada por los recursos físicos virtualizados que el administrador les haya otorgado.
+                Estas máquinas virtuales se usan para la ejecución de sistemas operativos orientados a servidores; donde cada servidor se encargará de procesar tareas, ejecución de software, alojamientos se servidores de correo, servidores web y muchos más.</p><br>
+
+
+                <p align="justify">Para la creación de una máquina virtual se establecen los siguientes pasos básicos a seguir:</p>
+
+                <p align="justify"> <strong> 1. </strong>   Después de haber realizado el proceso de virtualización, se deben descargar las imágenes de instalación ISO de los sistemas operativos a usar.</p> <br>
+
+                <p align="justify"><strong>A. </strong>Se establece una conexión ssh con la IP principal de servidor y el usuario root de proxmox.</p><br>
+                    <OL>
+                            <P align="center"> <img src="../images/CreaciondeMV/1.png" srcset="../images/CreaciondeMV/1.png 1200w,"><br><span align="center">Ilustración 1 Conexión SSH al servidor. 
+                            </span></P>
+                            </OL>
+
+                            <div class="bajar"></div>
+                <p align="justify"><strong>B. </strong>     Cuando la conexión sea exitosa, debemos acceder a la ruta <strong>/var/lib/vz/template/iso/</strong> en la cual se guardarán las imágenes de instalación ISO de los sistemas operativos a usar en las máquinas virtuales. </p><br>
+
+                 <OL>
+                            <P align="center"> <img src="../images/CreaciondeMV/2.png" srcset="../images/CreaciondeMV/2.png 1200w,"><br><span align="center">Ilustración 2 Ruta de acceso a las imágenes de instalación ISO. . 
+                            </span></P>
+                            </OL>
+
+                            <div class="bajar"></div>
+
+                            <p align="justify"><strong>C. </strong>     Como último paso se deben descargar las imágenes ISO a través del comando wget “url de la descarga”.</p><br>
+
+
+
+                 <OL>
+                            <P align="center"> <img src="../images/CreaciondeMV/3.png" srcset="../images/CreaciondeMV/3.png 1200w,"><br><span align="center">Ilustración 3 Descarga de las imágenes de instalación.  
+                            </span></P>
+                            </OL>
+
+                            <div class="bajar"></div>
+
+                            <div class="container-fluid">
+                             <blockquote>
+
+                            <p><span class="Nota">Nota:</span>Estas imágenes ISO también pueden ser cargadas desde un servidor local a través de un servicio ftp, por medio del uso del comando scp o gráficamente desde el panel de control de proxmox.</p>
+                            </blockquote>
+
+                        </div>
+
+                         <p align="justify"><strong>D. </strong>    Por último, listamos las imágenes descargadas para corroborar si se han descargado o cargado exitosamente.</p><br>
+
+
+
+                 <OL>
+                            <P align="center"> <img src="../images/CreaciondeMV/4.png" srcset="../images/CreaciondeMV/4.png 1200w,"><br><span align="center">Ilustración 4 Lista de imágenes descargadas. 
+                            </span></P>
+                            </OL>
+
+                            <div class="bajar"></div>
+
+
+                             <p align="justify"> <strong> 2. </strong>    Después de haber descargado los sistemas operativos a instalar, se procede a crear cada máquina virtual.</p>
+
+                             <p align="justify"><strong>A. </strong>    En el panel de administración de proxmox, se da click en el botón create VM.</p><br>
+
+
+
+                 <OL>
+                            <P align="center"> <img src="../images/CreaciondeMV/5.png" srcset="../images/CreaciondeMV/5.png 1200w,"><br><span align="center">Ilustración 5 Creación de la Máquina Virtual en el panel de administración de Proxmox. 
+                            </span></P>
+                            </OL>
+
+                            <div class="bajar"></div>
+
+                            <p align="justify"><strong>B. </strong>    Al dar click en el botón <strong>create VM</strong> se desplegará una ventana en la cual se ingresará la información básica como el Id (Identificador) y el Nombre de la máquina virtual.</p><br>
+
+
+
+
+                 <OL>
+                            <P align="center"> <img src="../images/CreaciondeMV/6.png" srcset="../images/CreaciondeMV/6.png 1200w,"><br><span align="center">Ilustración 6 Creación Máquina Virtual, Información general.
+                            </span></P>
+                            </OL>
+
+                            <div class="bajar"></div>
+
+                            <div class="container-fluid">
+                             <blockquote>
+
+                            <p><span class="Nota">Nota:</span>En este paso se le asignará como ID 101 y Nombre centos7.</p>
+                            </blockquote>
+
+                        </div>
+
+
+                        <p align="justify"><strong>C. </strong>       Seleccionamos el tipo y arquitectura del sistema operativo a instalar. En este paso se instalará Centos 7 minimal x86_64 por tanto se seleccionará la opción <strong>Linux 4.X/3.X/2.6 kernel.</strong></p><br>
+
+
+                 <OL>
+                            <P align="center"> <img src="../images/CreaciondeMV/7.png" srcset="../images/CreaciondeMV/7.png 1200w,"><br><span align="center">Ilustración 7 Creación Máquina Virtual, tipo S.O. 
+                            </span></P>
+                            </OL>
+
+                            <div class="bajar"></div>
+
+                             <p align="justify"><strong>D. </strong>    Seleccionamos la imagen de instalación ISO de Centos 7.</p><br>
+
+
+                 <OL>
+                            <P align="center"> <img src="../images/CreaciondeMV/8.png" srcset="../images/CreaciondeMV/8.png 1200w,"><br><span align="center">Ilustración  8 Creación Máquina Virtual, Lector ISO. 
+                            </span></P>
+                            </OL>
+
+                            <div class="bajar"></div>
+
+                             <div class="container-fluid">
+                             <blockquote>
+
+                             <p><span class="Nota">Nota:</span>Se usará una imagen ISO de instalación, seleccionamos que la imagen se encuentra almacenada localmente y por último escogemos la imagen Centos7. </p>
+                            </blockquote>
+
+                        </div>
+
+                         <p align="justify"><strong>E. </strong>      Seleccionamos el disco duro a usar, el tamaño del disco duro y el formato de virtualización. </p><br>
+
+
+                 <OL>
+                            <P align="center"> <img src="../images/CreaciondeMV/9.png" srcset="../images/CreaciondeMV/9.png 1200w,"><br><span align="center">Ilustración 9 Creación de la Máquina Virtual, Disco Duro. 
+                            </span></P>
+                            </OL>
+
+                            <div class="bajar"></div>
+
+                            <p align="justify"><strong>F. </strong>      Ingresamos la cantidad de Sockets, Núcleos y el tipo de virtualización a usar en la máquina virtual. Para este trabajo utilizaremos KVM64.</p><br>
+
+
+                 <OL>
+                            <P align="center"> <img src="../images/CreaciondeMV/10.png" srcset="../images/CreaciondeMV/10.png 1200w,"><br><span align="center">Ilustración 10 Creación de la Máquina Virtual, información CPU. 
+                            </span></P>
+                            </OL>
+
+                            <div class="bajar"></div>
+
+                            <p align="justify"><strong>G. </strong>      Se ingresa el tamaño fijo de memoria RAM para la máquina virtual</p><br>
+
+
+                 <OL>
+                            <P align="center"> <img src="../images/CreaciondeMV/11.png" srcset="../images/CreaciondeMV/11.png 1200w,"><br><span align="center">Ilustración 11 Creación de la Máquina Virtual, Memoria RAM.
+                            </span></P>
+                            </OL>
+
+                            <div class="bajar"></div>
+
+                             <div class="container-fluid">
+                             <blockquote>
+
+                             <p><span class="Nota">Nota:</span>Se puede ingresar un tamaño de memoria dinámico, el cual está dado por un rango ingresado por el usuario; donde proxmox cambiara el valor dependiendo el uso de memoria RAM del servidor.</p>
+                            </blockquote>
+
+                        </div>
+
+                        <p align="justify"><strong>H. </strong>   Se selecciona la tarjeta en Modo Puente y el modelo de la tarjeta de Red de nuestro servidor.</p><br>
+
+
+                 <OL>
+                            <P align="center"> <img src="../images/CreaciondeMV/12.png" srcset="../images/CreaciondeMV/12.png 1200w,"><br><span align="center">Ilustración 12 Creación de la Máquina Virtual, Red. 
+                            </span></P>
+                            </OL>
+
+                            <div class="bajar"></div>
+
+                             <div class="container-fluid">
+                             <blockquote>
+
+                             <p><span class="Nota">Nota:</span>En este trabajo de escogió modo puente ya que la máquina virtual será independiente para su conexión a internet de las otras máquinas creadas.</p>
+                            </blockquote>
+                        </div>
+
+                         <p align="justify"><strong>I. </strong>   Por último, se muestra la información de toda la máquina virtual, y se da en finalizado para confirmar.</p><br>
+
+
+                 <OL>
+                            <P align="center"> <img src="../images/CreaciondeMV/13.png" srcset="../images/CreaciondeMV/13.png 1200w,"><br><span align="center">Ilustración 13 Creación de la Máquina Virtual, Confirmación de Datos.
+                            </span></P><br>
+                            </OL>
+
+                            <div class="bajar"></div>
+
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+
+            <div class="container-fluid">
+
+            <!-- /.row -->
+        <!-- /.row -->
+    
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="../vendor/raphael/raphael.min.js"></script>
+    <script src="../vendor/morrisjs/morris.min.js"></script>
+    <script src="../data/morris-data.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+</body>
+
+</html>

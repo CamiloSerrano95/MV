@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="Mayte"content="">
+
+    <title>Virtualizacion</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0" >
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+
+
+                </button>
+                <a class="navbar-brand">Virtualizacion de Servidores</a>
+
+            </div>
+            <!-- /.navbar-header -->
+            
+
+            <div class="bajar"></div>
+            <div class="navbar-default2 sidebar" role="navigation">
+
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                    
+
+                        
+                        <li>
+                            <a href="index.html"></i>Inicio</a>
+                        </li>
+                        <li>
+                            <a href="#"></i>Proxmox<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="Concepto.html">Conceptualización</a>
+                                </li>
+                                <li>
+                                    <a href="InstalacionProxmox.html">Instalción</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="creacionmv.html"></i>Creacion de Maquina Virtual</a>
+                        </li>
+                        <li>
+                            <a href="#"></i>Instalacion del Sistema Operativo<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="ConceptoMV.html">Conceptos de maquina virtual</a>
+                                </li>
+                                <li>
+                                    <a href="InstalacionUbuntuServer.html">Ubuntu Server 16.04</a>
+                                </li>
+                                <li>
+                                    <a href="InstalacionCentosServer.html">Centos Minimal 7</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"></i>Configuracion IP estatica<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="IPUbuntuServer.html">Ubuntu Server 16.04</a>
+                                </li>
+                                <li>
+                                    <a href="IPCentosServer.html">Centos Minimal 7</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"></i>Instalacion del Servidor LAMP<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#">Ubuntu Server 16.04</a>
+                                </li>
+                                <li>
+                                    <a href="#">Centos Minimal 7</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"></i>Instalcion del Servidor FTP<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="FtpUbuntuServer.html">Ubuntu Server 16.04</a>
+                                </li>
+                                <li>
+                                    <a href="FtpCentosServer.html">Centos Minimal 7</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"></i>Dockers<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#">Conceptualizacion</a>
+                                </li>
+                                <li>
+                                    <a href="#">Instalacion</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                      <li>
+                            <a href="#"></i>Autores</a>
+                        </li>  
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header text-center">Instalación de Proxmox v4.2</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+
+            <div class="container-fluid">
+
+                <p align="justify"> <strong> 1. </strong>Descargamos la imagen ISO installer de la página oficial de Proxmox.</p>
+                    <OL>
+                        <p align="justify">URL: <a href="https://www.proxmox.com/en/downloads">https://www.proxmox.com/en/downloads</a></p>
+                 
+                            <P align="center"> <img src="../images/Proxmox/instalacion.png" srcset="../images/Proxmox/instalacion.png 1200w,"><br><span align="center">Ilustración 1 Sitio de descarga Oficial de Proxmox.Fuente https://www.proxmox.com/en/
+                            </span></P>
+                            </OL>
+
+                            <div class="bajar"></div>
+
+                         <div class="container-fluid">
+                             <blockquote>
+
+                            <p><span class="Nota">Nota:</span>Para el desarrollo de este trabajo de grado se contrató el servicio con la empresa OVH, la cual ya trae un sistema de instalación proxmox automatizado; por esta razón mostramos la instalación en un servidor local distinto al que se va a utilizar.</p>
+                            </blockquote>
+
+                        </div>
+
+                             <p align="justify"> <strong> 2. </strong> Montamos la imagen ISO en el sistema de arranque del servidor y escogemos la opción</p>
+                        <OL>
+                            <code>#Install Proxmox VE</code> 
+                            <div class="bajar"></div>
+                            <P align="center"> <img src="../images/Proxmox/inicio.png" srcset="../images/Proxmox/inicio.png 1200w,"><br><span align="center">Ilustración 2 Instalación Proxmox, Inicio. Fuente: Autores</span>
+                            </P>
+                        </OL>
+                             <div class="bajar"></div>
+
+                             <p align="justify"> <strong>3. </strong> El siguiente paso es aceptar los términos y condiciones acerca del uso de Proxmox VE</p>
+                        <OL>
+                            <div class="bajar"></div>
+                 
+                            <P align="center"> <img src="../images/Proxmox/condiciones.png" srcset="../images/Proxmox/condiciones.png 1200w,"><br><span align="center">Ilustración 3 Instalación Proxmox, Términos y condiciones. Fuente: Autores</span>
+                            </P>
+                        </OL>
+
+                            <p align="justify"> <strong>4. </strong> Ahora nos muestra la opción para escoger el disco duro físico o lógico que hayamos creado, donde se almacenarán toda la información de proxmox y las distintas máquinas virtuales creadas.</p>
+                        <OL>
+                            <div class="bajar"></div>
+                 
+                            <P align="center"> <img src="../images/Proxmox/disco.png" srcset="../images/Proxmox/disco.png 1200w,"><br><span align="center">Ilustración 4 Instalación Proxmox, escoger Disco Duro. Fuente Autores.</span>
+                            </P>
+                        </OL>
+
+                            <p align="justify"> <strong>5. </strong> Ingresamos el País, Zona Horaria y el Lenguaje del Teclado que reconocerá Proxmox VE.</p>
+                        <OL>
+                            <div class="bajar"></div>
+                 
+                            <P align="center"> <img src="../images/Proxmox/zonahoraria.png" srcset="../images/Proxmox/zonahoraria.png 1200w,"><br><span align="center">Ilustración 5 Instalación Proxmox, Zona horaria. Fuente: Autores</span>
+                            </P>
+                        </OL>
+                    
+
+                            <p align="justify"> <strong>6. </strong> Luego ingresamos la contraseña para el acceso root de proxmox y un correo electrónico donde llegará información y notificaciones sobre proxmox y las máquinas virtuales</p>
+                        <OL>
+                            <div class="bajar"></div>
+                 
+                            <P align="center"> <img src="../images/Proxmox/datosacceso.png" srcset="../images/Proxmox/datosacceso.png 1200w,"><br><span align="center">Ilustración 6 Instalación Proxmox, Datos de acceso. Fuente: Autores</span>
+                            </P>
+                        </OL>
+                            
+
+                            <p align="justify"> <strong>7. </strong> La siguiente información a ingresar son los datos de configuración de la red general sobre la cual va a trabajar proxmox. Para esto tenemos los siguientes ítems:</p>
+                        <OL>
+                            <div class="bajar"></div>
+                            <OL>
+
+                               
+                                    <p><span class="Nota"> HOSTNAME: </span>En este campo se ingresará el dominio de tu empresa o cualquier dominio sobre el cual estará alojado proxmox VE.</p>
+                                    <p><span class="Nota"> IP ADDRESS: </span> Dirección IP que tendrá el servidor.</p>
+                                    <p><span class="Nota"> NETMASK: </span> Máscara de red.</p>
+                                    <p><span class="Nota"> GATEWAY: </span> Puerta de enlace.</p>
+                                    <p><span class="Nota"> DNS SERVER: </span> Servidores DNS.</p>
+
+                            </OL>
+                            <div class="bajar"></div>
+                 
+                            <P align="center"> <img src="../images/Proxmox/accesoDHCP.png" srcset="../images/Proxmox/accesoDHCP.png 1200w,"><br><span align="center">Ilustración 7 Instalación Proxmox, Datos de acceso con DHCP. Fuente: Autores</span>
+                            </P>
+                        </OL>
+                            <div class="container-fluid">
+                            <blockquote>
+                                <p><span class="Nota">Nota:</span> Si la red sobre la cual está funcionando el servidor físico contiene un servidor DHCP, la información será llenada automáticamente.</p>
+                            </blockquote>
+                            </div>
+
+                             <div class="bajar"></div>
+
+                            <p align="justify"> <strong>8. </strong> Esperamos hasta que proxmox configure todo el servidor y damos click en NEXT</p>
+                        <OL>
+                            <div class="bajar"></div>
+                 
+                            <P align="center"> <img src="../images/Proxmox/configuracion.png" srcset="../images/Proxmox/configuracion.png 1200w,"><br><span align="center">Ilustración 8 Instalación Proxmox, Configuración. Fuente: Autores</span>
+                            </P>
+                        </OL>
+                             <div class="bajar"></div>
+
+                            <p align="justify"> <strong>9. </strong> Como último paso damos click en “REBOOT” o “REINICIAR”</p>
+                        <OL>
+                            <div class="bajar"></div>
+                 
+                            <P align="center"> <img src="../images/Proxmox/reinicio.png" srcset="../images/Proxmox/reinicio.png 1200w,"><br><span align="center">Ilustración 9 Instalación Proxmox, Reinicio de la Maquina. Fuente: Autores</span>
+                            </P>
+                        </OL>
+                        <div class="bajar"></div>
+
+                            <p align="justify"> <strong>10. </strong> Cuando el servidor se está reiniciando encontramos la ventana del boot, donde se debe seleccionar el sistema proxmox de arranque Proxmox Virtual Environment GNU/Linux</p>
+                        <OL>
+                            <div class="bajar"></div>
+                 
+                            <P align="center"> <img src="../images/Proxmox/arranque.png" srcset="../images/Proxmox/arranque.png 1200w,"><br><span align="center">Ilustración 10 Instalación Proxmox, Arranque del sistema. Fuente: Autores</span>
+                            </P>
+                        </OL>
+
+                        <div class="bajar"></div>
+
+
+                            <p align="justify"> <strong>11. </strong> El sistema nos muestra un entorno no gráfico donde aparece el login para el ingreso a proxmox. En este caso se debe tener en cuenta tres cosas muy importantes:</p>
+                        <OL>
+                            <p><span class="Nota">A. </span> Obtener la IP y el puerto que nos muestra esta ventana </p>
+                            <div class="bajar"></div>
+
+                            <p><span class="Nota">B. </span> Las configuraciones sobre las máquinas virtuales proxmox deben realizarse sobre el entorno gráfico para no tener algún problema con la consola de comando o falta de experiencia sobre el tema. </p>
+                            <div class="bajar"></div>
+
+                            <p><span class="Nota">C. </span> Para ingresar al panel gráfico de proxmox se necesita colocar en un navegador web la dirección IP y el puerto antecedidos de una conexión segura https://  </p>
+                            <div class="bajar"></div>
+
+                 
+                            <P align="center"> <img src="../images/Proxmox/inicioproxmox.png" srcset="../images/Proxmox/inicioproxmox.png 1200w,"><br><span align="center">Ilustración 11 Instalación Proxmox, Inicio. Fuente: Autores.</span>
+                            </P>
+                        </OL>
+                        <div class="bajar"></div>
+
+                        <div class="container-fluid">
+
+                        <blockquote>
+                                <p><span class="Nota">Nota:</span> La información obtenida en esta imagen es sobre un servidor local de prueba. La información del servidor a utilizar en el desarrollo de esta tesis es:
+                                </blockquote>
+                            </div>
+                                <ol>
+                                <p><span class="Nota">IP:</span> 91.121.89.28 </p>
+                                <p><span class="Nota">PUERTO:</span> 8006</p>
+                                <p><span class="Nota">USER:</span> root</p>
+                                <p><span class="Nota">PASSWORD:</span> tesis2016*/</p>
+                                </ol>
+                                </p>
+                            
+
+                             <p align="justify"> <strong> 12. </strong> Ingresamos en el navegador la IP y el puerto necesario para ingresar al panel de control de proxmox VE. URL: https://91.121.89.28:8006/</p>
+                        <OL>
+                            <div class="bajar"></div>
+                            <P align="center"> <img src="../images/Proxmox/panelproxmox.png" srcset="../images/Proxmox/panelproxmox.png 1200w,"><br><span align="center">Ilustración 12 Instalación Proxmox, Ingreso al panel del navegador. Fuentes: Autores
+                            </span>
+                            </P>
+                        </OL>
+                             <div class="bajar"></div>
+
+                             <p align="justify"> <strong> 13. </strong> En la siguiente vista encontramos el panel de control de proxmox, donde encontraremos nuestro servidor principal en el menú izquierdo.</p>
+                        <OL>
+                            <div class="bajar"></div>
+                            <P align="center"> <img src="../images/Proxmox/paneldecontrolproxmox.png" srcset="../images/Proxmox/paneldecontrolproxmox.png 1200w,"><br><span align="center">Ilustración 13 Instalación Proxmox, Panel de Control. Fuente: Autores.</span>
+                            </P>
+                        </OL>
+
+                        <div class="container-fluid">
+                             <blockquote>
+
+                            <p><span class="Nota">¿A donde ir?</span> En este punto se ha instalado correctamente Proxmox, Para continuar con la creacion de una maquina virtual y asi poder montar un sistema operativo ir <a href="creacionmv.html">Creacion de Maquina Virtual</a></p>
+                            </blockquote>
+
+                        </div>
+                             <div class="bajar"></div>
+
+            </div>
+        </div>
+        <!-- /.row -->
+    
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="../vendor/raphael/raphael.min.js"></script>
+    <script src="../vendor/morrisjs/morris.min.js"></script>
+    <script src="../data/morris-data.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+</body>
+
+</html>
