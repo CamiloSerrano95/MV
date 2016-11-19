@@ -157,112 +157,134 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header text-center">INSTALACIÓN SERVIDOR FTP EN CENTOS 7 MINIMAL </h1>
+                    <h1 class="page-header text-center">INSTALACIÓN SERVIDOR LAMP EN UBUNTU SERVER 16.04</h1>
                     <div class="container-fluid">
-                <p align="justify">Para la instalación del servidor FTP seguimos los siguientes pasos: </p><br>
+                <p align="justify">Para la instalación del servidor LAMP en la máquina de Ubuntu Server se deben seguir los siguientes pasos: </p><br>
 
-                <p align="justify"> <strong> 1. </strong>     Verificamos estar como súper usuario, e instalamos FTP mediante el comando <strong>“yum -y install vsftp”</strong>.</p> <br>
+                <p align="justify"> <strong> 1. </strong>     Inicialmente se inicia como súper usuario usando el comando <strong>“sudo su”</strong> y actualizamos los repositorios del sistema mediante el comando <strong>“apt-get update”</strong>.</p><br>
 
                     <OL>
-                            <P align="center"> <img src="../images/FtpCentos/1.png" srcset="../images/FtpCentos/1.png 1200w,"><br></P>
+                            <P align="center"> <img src="../images/LampUbuntu/1.png" srcset="../images/LampUbuntu/1.png 1200w,"><br></P>
                         </OL>
 
                             <div class="bajar"></div>
-                <p align="justify"><strong>2. </strong>     Accedemos al archivo de configuración de FTP el cual se encuentra en la ruta <strong>“/etc/vsftpd/vsftpd.conf”</strong></p><br>
+                <p align="justify"><strong>2. </strong>    El primer paso de la instalación del servidor LAMP es la instalación del Apache mediante el comando <strong>“apt-get install apache2”</strong>, quien cumple con la función del servidor web y nos permite la interpretación de las páginas y plataformas.</p><br>
 
                  <OL>
-                             <P align="center"> <img src="../images/FtpCentos/2.png" srcset="../images/FtpCentos/2.png 1200w,"><br></P>
+                             <P align="center"> <img src="../images/LampUbuntu/2.png" srcset="../images/LampUbuntu/2.png 1200w,"><br></P>
                             </OL>
 
                             <div class="bajar"></div>
 
-                            <p align="justify"><strong>3. </strong>      Se descomenta la opción de la conexión de un usuario ftp anónimo colocando NO en la opcion <strong>“anonymous_enable”</strong></p><br>
+                            <p align="justify"><strong>3. </strong>      Le damos la autorización para que pueda continuar con la instalación. </p><br>
 
                  <OL>
-                           <P align="center"> <img src="../images/FtpCentos/3.png" srcset="../images/FtpCentos/3.png 1200w,"><br></P>
+                           <P align="center"> <img src="../images/LampUbuntu/3.png" srcset="../images/LampUbuntu/3.png 1200w,"><br></P>
+                            </OL>
+
+                            <div class="bajar"></div>
+
+                            <p align="justify"><strong>4. </strong>      A través del comando <strong>“systemctl status apache2”</strong> comprobamos que el servicio de apache este activo. </p><br>
+
+                            <OL>
+                            <P align="center"> <img src="../images/LampUbuntu/4.png" srcset="../images/LampUbuntu/4.png 1200w,"><br></P>
+                            </OL>
+
+                            <div class="bajar"></div>
+
+                            <p align="justify"><strong>5. </strong>     Para validar por completo la instalación de apache en la máquina, accedemos al navegador y digitamos la IP de nuestro servidor en la barra de navegación para este caso <strong>“149.202.3.61”</strong>. Si la instalación ha sido correcta debe aparecer el archivo de bienvenida de apache.</p><br>
+
+                            <OL>
+                           <P align="center"> <img src="../images/LampUbuntu/5.png" srcset="../images/LampUbuntu/5.png 1200w,"><br></P>
+                            </OL>
+
+                            <div class="bajar"></div>
+
+                             <p align="justify"><strong>6. </strong>     Mediante el comando <strong> “apt-get install mysql-server”</strong> instalamos el gestor de bases de datos MySQL.</p><br>
+
+                 <OL>
+                             <P align="center"> <img src="../images/LampUbuntu/6.png" srcset="../images/LampUbuntu/6.png 1200w,"><br></P>
+                            </OL>
+
+                            <div class="bajar"></div>
+
+                            <p align="justify"><strong>7. </strong>      En esta parte de la instalación de MySQL pedirá que se ingrese la contraseña del usuario root (Administrador) con la cual podrás brindar seguridad a tus bases de datos y la información contenida en ellas.</p><br>
+
+                 <OL>
+                             <P align="center"> <img src="../images/LampUbuntu/7.png" srcset="../images/LampUbuntu/7.png 1200w,"><br></P>
+                            </OL>
+
+                            <div class="bajar"></div>
+
+                             <p align="justify"><strong>8. </strong>     Ahora se confirma la contraseña con el fin de brindar una mayor seguridad y evitar errores en el ingreso de la misma.</p><br>
+
+                 <OL>
+                             <P align="center"> <img src="../images/LampUbuntu/8.png" srcset="../images/LampUbuntu/8.png 1200w,"><br></P>
+                            </OL>
+
+                            <div class="bajar"></div>
+
+                            <p align="justify"><strong>9. </strong>      Con el comando <strong>“mysql  -uroot  -p”</strong> accedemos a la consola de MySQL.</p><br>
+
+                 <OL>
+                             <P align="center"> <img src="../images/LampUbuntu/9.png" srcset="../images/LampUbuntu/9.png 1200w,"><br></P>
+                            </OL>
+
+                            <div class="bajar"></div>
+
+                             <p align="justify"><strong>10. </strong>     Estando en la consola de MySQL ejecutamos el comando <strong>“show databases”</strong>; y este nos mostrara todas las bases de datos creadas en el servidor, con lo cual terminamos de comprobar la correcta instalación de MySQL. </p><br>
+
+                 <OL>
+                             <P align="center"> <img src="../images/LampUbuntu/10.png" srcset="../images/LampUbuntu/10.png 1200w,"><br></P>
+                            </OL>
+
+                            <div class="bajar"></div>
+
+                            <p align="justify"><strong>11. </strong>     Una vez instalados el servidor web y el gestor de bases de datos procedemos a instalar el lenguaje de programación PHP versión 7 y lo realizamos mediante el comando <strong>“apt-get install php libapache2-mod-php7.0 php7.0-mysql php7.0-curl php7.0-json php7.0-mbstring php7.0-mcrypt”</strong>  Aceptamos continuar, para que termine el proceso de instalación de manera correcta.</p><br>
+
+                 <OL>
+                             <P align="center"> <img src="../images/LampUbuntu/11.png" srcset="../images/LampUbuntu/11.png 1200w,"><br></P>
+                            </OL>
+
+                            <div class="bajar"></div>
+
+                            <p align="justify"><strong>12. </strong>     Con el siguiente comando <strong>“apt-cache search php7-*”</strong> Se instalan todos los módulos necesarios el correcto funcionamiento y compatibilidad de PHP7 con MySQL.</p><br>
+
+                 <OL>
+                             <P align="center"> <img src="../images/LampUbuntu/12.png" srcset="../images/LampUbuntu/12.png 1200w,"><br></P>
+                            </OL>
+
+                            <div class="bajar"></div>
+
+                             <p align="justify"><strong>13. </strong>      Ahora con el comando <strong>“apt-get install libapache2-mod-php7.0” </strong> Instalamos los módulos necesarios para el correcto funcionamiento y compatibilidad con PHP7 y Apache2.</p><br>
+
+                 <OL>
+                             <P align="center"> <img src="../images/LampUbuntu/13.png" srcset="../images/LampUbuntu/13.png 1200w,"><br></P>
+                            </OL>
+
+                            <div class="bajar"></div>
+
+                            <p align="justify"><strong>14. </strong>      Empezamos a comprobar la correcta instalación de PHP7 ejecutando el comando <strong>“php -v”</strong> con el fin de que nos muestre la versión que ha sido instalada.</p><br>
+
+                 <OL>
+                             <P align="center"> <img src="../images/LampUbuntu/14.png" srcset="../images/LampUbuntu/14.png 1200w,"><br></P>
+                            </OL>
+
+                            <div class="bajar"></div>
+
+                            <p align="justify"><strong>15. </strong>     Por ultimo para comprobar la correcta instalación de PHP nos vamos al navegador y digitamos la dirección IP de la maquina más <strong>“info.php”</strong> de la siguiente manera <strong>http://149.202.3.61/info.php</strong> y debe mostrarnos la siguiente imagen. </p><br>
+
+                 <OL>
+                             <P align="center"> <img src="../images/LampUbuntu/15.png" srcset="../images/LampUbuntu/15.png 1200w,"><br></P>
                             </OL>
 
                             <div class="container-fluid">
                              <blockquote>
 
-                            <p><span class="Nota">Nota:</span>: A diferencia de la instalación en sistemas basados en debían, en Centos 7 las opciones de un usuario autenticado ya vienen habilitadas por lo cual no hay que modificarlas. </p>
+                            <p><span class="Nota">Nota:</span>Si esto sucede hemos culminado de manera correcta la instalación de nuestro servidor LAMP en la máquina de Ubuntu Server 16.04.</p>
                             </blockquote>
 
                         </div>
-
-                            <div class="bajar"></div>
-
-                            <p align="justify"><strong>4. </strong>     Con el siguiente comando se da permiso a FTP para que se pueda ejecutar de manera correcta y realice todas las operaciones necesarias.</p><br>
-
-                            <OL>
-                            <P align="center"> <img src="../images/FtpCentos/4.png" srcset="../images/FtpCentos/4.png 1200w,"><br></P>
-                            </OL>
-
-                            <div class="bajar"></div>
-
-                            <p align="justify"><strong>5. </strong>    Este paso mediante el comando <strong>“setsebool -P ftp_home_dir on”</strong> se le da permiso a FTP para que escriba, lea y guarde en su directorio predeterminado.</p><br>
-
-                            <OL>
-                            <P align="center"> <img src="../images/FtpCentos/5.png" srcset="../images/FtpCentos/5.png 1200w,"><br></P>
-                            </OL>
-
-                            <div class="container-fluid">
-                             <blockquote>
-
-                            <p><span class="Nota">Nota:</span>: Atodo se trabaja bajo el comando <strong>“setsebool”</strong> debido a que es un comando que manera SELinux el cual es una mejora a la seguridad de muchos sistemas operativos modernos como Centos</p>
-                            </blockquote>
-
-                        </div>
-
-                            <div class="bajar"></div>
-
-                             <p align="justify"><strong>6. </strong>     Ahora añadimos un nuevo usuario FTP llamado “ftpuser”</p><br>
-
-                 <OL>
-                             <P align="center"> <img src="../images/FtpCentos/6.png" srcset="../images/FtpCentos/6.png 1200w,"><br></P>
-                            </OL>
-
-                            <div class="bajar"></div>
-
-                            <p align="justify"><strong>7. </strong>      Se asigna una contraseña al usuario FTP creado anteriormente</p><br>
-
-                 <OL>
-                             <P align="center"> <img src="../images/FtpCentos/7.png" srcset="../images/FtpCentos/7.png 1200w,"><br></P>
-                            </OL>
-
-                            <div class="bajar"></div>
-
-                             <p align="justify"><strong>8. </strong>     Se arranca el servicio de FTP por medio del comando <strong>“systemctl start vsftpd”</strong>.</p><br>
-
-                 <OL>
-                             <P align="center"> <img src="../images/FtpCentos/8.png" srcset="../images/FtpCentos/8.png 1200w,"><br></P>
-                            </OL>
-
-                            <div class="bajar"></div>
-
-                            <p align="justify"><strong>9. </strong>      Se corrobora que la acción anterior se halla ejecutado correctamente.</p><br>
-
-                 <OL>
-                             <P align="center"> <img src="../images/FtpCentos/9.png" srcset="../images/FtpCentos/9.png 1200w,"><br></P>
-                            </OL>
-
-                            <div class="bajar"></div>
-
-                             <p align="justify"><strong>10. </strong>     Activamos a ftp para que se inicie cada vez que el sistema arranque.</p><br>
-
-                 <OL>
-                             <P align="center"> <img src="../images/FtpCentos/10.png" srcset="../images/FtpCentos/10.png 1200w,"><br></P>
-                            </OL>
-
-                             <div class="container-fluid">
-                             <blockquote>
-
-                            <p><span class="Nota">Nota:</span>Por último, se descarga un cliente FTP, puede usarse FileZilla <strong>“https://filezilla-project.org/”</strong>, se descarga e instala y se ingresan los datos del servidor como dirección IP, nombre de usuario y contraseña. De esta manera se puede realizar la trasferencia de archivos mediante FTP de manera exitosa. </p>
-                            </blockquote>
-
-                        </div>
-
-                        <P align="center"> <img src="../images/FtpCentos/11.png" srcset="../images/FtpCentos/11.png 1200w,"><br></P>
 
                             <div class="bajar"></div>
                             

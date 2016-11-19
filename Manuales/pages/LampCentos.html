@@ -157,114 +157,133 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header text-center">INSTALACIÓN SERVIDOR FTP EN CENTOS 7 MINIMAL </h1>
+                    <h1 class="page-header text-center">INSTALACIÓN SERVIDOR LAMP EN CENTOS 7 MINIMAL</h1>
                     <div class="container-fluid">
-                <p align="justify">Para la instalación del servidor FTP seguimos los siguientes pasos: </p><br>
+                <p align="justify">Para la instalación y configuración de un servidor LAMP en Centos 7 Minimal se siguen los siguientes pasos:</p><br>
 
-                <p align="justify"> <strong> 1. </strong>     Verificamos estar como súper usuario, e instalamos FTP mediante el comando <strong>“yum -y install vsftp”</strong>.</p> <br>
+                <p align="justify"> <strong> 1. </strong>     Primero actualizamos nuestra máquina virtual para eso utilizamos el comando <strong>“yum –y update”</strong>.</p><br>
 
                     <OL>
-                            <P align="center"> <img src="../images/FtpCentos/1.png" srcset="../images/FtpCentos/1.png 1200w,"><br></P>
+                            <P align="center"> <img src="../images/LampCentos/1.png" srcset="../images/LampCentos/1.png 1200w,"><br></P>
                         </OL>
 
                             <div class="bajar"></div>
-                <p align="justify"><strong>2. </strong>     Accedemos al archivo de configuración de FTP el cual se encuentra en la ruta <strong>“/etc/vsftpd/vsftpd.conf”</strong></p><br>
 
-                 <OL>
-                             <P align="center"> <img src="../images/FtpCentos/2.png" srcset="../images/FtpCentos/2.png 1200w,"><br></P>
-                            </OL>
+                            <p align="justify"> <strong> 2. </strong>     Instalamos apache2 quien cumple con la función del servidor web y nos permite la interpretación de las paginas HTML.</p><br>
+
+                    <OL>
+                            <P align="center"> <img src="../images/LampCentos/1.png" srcset="../images/LampCentos/1.png 1200w,"><br></P>
+                        </OL>
 
                             <div class="bajar"></div>
 
-                            <p align="justify"><strong>3. </strong>      Se descomenta la opción de la conexión de un usuario ftp anónimo colocando NO en la opcion <strong>“anonymous_enable”</strong></p><br>
+                            <p align="justify"> <strong> 3. </strong>     Iniciamos el servicio con el siguiente comando <strong>“systemctl start httpd.service”</strong>.</p><br>
 
-                 <OL>
-                           <P align="center"> <img src="../images/FtpCentos/3.png" srcset="../images/FtpCentos/3.png 1200w,"><br></P>
-                            </OL>
+                    <OL>
+                            <P align="center"> <img src="../images/LampCentos/3.png" srcset="../images/LampCentos/3.png 1200w,"><br></P>
+                        </OL>
 
-                            <div class="container-fluid">
+                            <div class="bajar"></div>
+
+                            <p align="justify"> <strong> 4. </strong>     Ejecutamos el comando <strong>“systemctl enable httpd.service”</strong> con el fin de que cada vez que se reinicie la maquina el servicio inicie automáticamente.</p><br>
+
+                    <OL>
+                            <P align="center"> <img src="../images/LampCentos/4.png" srcset="../images/LampCentos/4.png 1200w,"><br></P>
+                        </OL>
+
+                            <div class="bajar"></div>
+
+                            <p align="justify"> <strong> 5. </strong>     Con el comando “systemctl status httpd.service” podemos ver el estado del servidor.</p><br>
+
+                    <OL>
+                            <P align="center"> <img src="../images/LampCentos/5.png" srcset="../images/LampCentos/5.png 1200w,"><br></P>
+                        </OL>
+
+                            <div class="bajar"></div>
+
+                            <p align="justify"> <strong> 6. </strong>     Abrimos el navegador y digitamos la IP de nuestro servidor en la barra de navegación en este caso la IP es <strong>“149.202.3.60”</strong> Si apache ha quedado bien instalado vera el archivo de bienvenida de apache.</p><br>
+
+                    <OL>
+                            <P align="center"> <img src="../images/LampCentos/6.png" srcset="../images/LampCentos/6.png 1200w,"><br></P>
+                        </OL>
+
+                            <div class="bajar"></div>
+
+                            <p align="justify"> <strong> 7. </strong>      Procedemos a realizar la instalación del gestor de bases de datos <strong>“MySQL (MariaDB)”</strong> , mediante el siguiente comando <strong>“yum install mariadb-serve mariadb”</strong>.</p><br>
+
+                    <OL>
+                            <P align="center"> <img src="../images/LampCentos/7.png" srcset="../images/LampCentos/7.png 1200w,"><br></P>
+                        </OL>
+
+                            <div class="bajar"></div>
+
+                            <p align="justify"> <strong> 8. </strong>      Iniciamos el servicio con el siguiente comando <strong>“systemctl start mariadb”</strong> y verificamos el estado del servicio <strong>“systemctl status httpd.service”</strong>.</p><br>
+
+                    <OL>
+                            <P align="center"> <img src="../images/LampCentos/8.png" srcset="../images/LampCentos/8.png 1200w,"><br></P>
+                        </OL>
+
+                            <div class="bajar"></div>
+
+                            <p align="justify"> <strong> 9. </strong>      Al instalar gestor de base de datos se instala sin una contraseña se puede ver con el siguiente comando <strong>“mysql -uroot”</strong>.</p><br>
+
+                    <OL>
+                            <P align="center"> <img src="../images/LampCentos/9.png" srcset="../images/LampCentos/9.png 1200w,"><br></P>
+                        </OL>
+
+                            <div class="bajar"></div>
+
+                             <p align="justify"> <strong> 10. </strong>      Se procede a configura una contraseña al gestor de base de datos para eso se utiliza el siguiente comando <strong>“mysql_secure_installation”</strong>.</p><br>
+
+                    <OL>
+                            <P align="center"> <img src="../images/LampCentos/10.png" srcset="../images/LampCentos/10.png 1200w,"><br></P>
+                        </OL>
+
+                            <div class="bajar"></div>
+
+                            <p align="justify"> <strong> 11. </strong>      Ejecutamos el comando <strong>“systemctl enable mariadb.service”</strong> con el fin de que cada vez que reiniciemos la maquina el servicio inicie automáticamente.</p><br>
+
+                    <OL>
+                            <P align="center"> <img src="../images/LampCentos/11.png" srcset="../images/LampCentos/11.png 1200w,"><br></P>
+                        </OL>
+
+                            <div class="bajar"></div>
+
+                            <p align="justify"> <strong> 12. </strong>      Instalamos php7, primero se agrega el repositorio mediante el comando <strong>“yum install -y” https://centos7.iuscommunity.org/ius-release.rpm”</strong>.</p><br>
+
+                    <OL>
+                            <P align="center"> <img src="../images/LampCentos/12.png" srcset="../images/LampCentos/12.png 1200w,"><br></P>
+                        </OL>
+
+                            <div class="bajar"></div>
+
+                            <p align="justify"> <strong> 13. </strong>      Instalar los complementos de PHP 7.</p><br>
+
+                    <OL>
+                            <P align="center"> <img src="../images/LampCentos/13.png" srcset="../images/LampCentos/13.png 1200w,"><br></P>
+                        </OL>
+
+                            <div class="bajar"></div>
+
+                            <p align="justify"> <strong> 14. </strong>      Por ultimo para comprobar que PHP ha quedado correctamente instalado en la ruta /home/var/www/html   se crea un archivo de en cual debe contener la siguiente estructura. 
+                            <P align="center"> <img src="../images/LampCentos/14.png" srcset="../images/LampCentos/14.png 1200w,"><br></P>
+                            Y debe ser guardada con la extensión (php). Luego en el navegador se digita la dirección IP de la maquina más el nombre de archivo creado con anterioridad <strong>“149.202.3.60/test.php”</strong>.</p><br>
+
+                    <OL>
+                            <P align="center"> <img src="../images/LampCentos/15.png" srcset="../images/LampCentos/15.png 1200w,"><br></P>
+                        </OL>
+
+                         <div class="container-fluid">
                              <blockquote>
 
-                            <p><span class="Nota">Nota:</span>: A diferencia de la instalación en sistemas basados en debían, en Centos 7 las opciones de un usuario autenticado ya vienen habilitadas por lo cual no hay que modificarlas. </p>
+                            <p><span class="Nota">Nota:</span>Si esto sucede hemos culminado de manera correcta la instalación de nuestro servidor LAMP en la máquina de Centos 7 Minimal.</p>
                             </blockquote>
 
                         </div>
 
                             <div class="bajar"></div>
 
-                            <p align="justify"><strong>4. </strong>     Con el siguiente comando se da permiso a FTP para que se pueda ejecutar de manera correcta y realice todas las operaciones necesarias.</p><br>
 
-                            <OL>
-                            <P align="center"> <img src="../images/FtpCentos/4.png" srcset="../images/FtpCentos/4.png 1200w,"><br></P>
-                            </OL>
-
-                            <div class="bajar"></div>
-
-                            <p align="justify"><strong>5. </strong>    Este paso mediante el comando <strong>“setsebool -P ftp_home_dir on”</strong> se le da permiso a FTP para que escriba, lea y guarde en su directorio predeterminado.</p><br>
-
-                            <OL>
-                            <P align="center"> <img src="../images/FtpCentos/5.png" srcset="../images/FtpCentos/5.png 1200w,"><br></P>
-                            </OL>
-
-                            <div class="container-fluid">
-                             <blockquote>
-
-                            <p><span class="Nota">Nota:</span>: Atodo se trabaja bajo el comando <strong>“setsebool”</strong> debido a que es un comando que manera SELinux el cual es una mejora a la seguridad de muchos sistemas operativos modernos como Centos</p>
-                            </blockquote>
-
-                        </div>
-
-                            <div class="bajar"></div>
-
-                             <p align="justify"><strong>6. </strong>     Ahora añadimos un nuevo usuario FTP llamado “ftpuser”</p><br>
-
-                 <OL>
-                             <P align="center"> <img src="../images/FtpCentos/6.png" srcset="../images/FtpCentos/6.png 1200w,"><br></P>
-                            </OL>
-
-                            <div class="bajar"></div>
-
-                            <p align="justify"><strong>7. </strong>      Se asigna una contraseña al usuario FTP creado anteriormente</p><br>
-
-                 <OL>
-                             <P align="center"> <img src="../images/FtpCentos/7.png" srcset="../images/FtpCentos/7.png 1200w,"><br></P>
-                            </OL>
-
-                            <div class="bajar"></div>
-
-                             <p align="justify"><strong>8. </strong>     Se arranca el servicio de FTP por medio del comando <strong>“systemctl start vsftpd”</strong>.</p><br>
-
-                 <OL>
-                             <P align="center"> <img src="../images/FtpCentos/8.png" srcset="../images/FtpCentos/8.png 1200w,"><br></P>
-                            </OL>
-
-                            <div class="bajar"></div>
-
-                            <p align="justify"><strong>9. </strong>      Se corrobora que la acción anterior se halla ejecutado correctamente.</p><br>
-
-                 <OL>
-                             <P align="center"> <img src="../images/FtpCentos/9.png" srcset="../images/FtpCentos/9.png 1200w,"><br></P>
-                            </OL>
-
-                            <div class="bajar"></div>
-
-                             <p align="justify"><strong>10. </strong>     Activamos a ftp para que se inicie cada vez que el sistema arranque.</p><br>
-
-                 <OL>
-                             <P align="center"> <img src="../images/FtpCentos/10.png" srcset="../images/FtpCentos/10.png 1200w,"><br></P>
-                            </OL>
-
-                             <div class="container-fluid">
-                             <blockquote>
-
-                            <p><span class="Nota">Nota:</span>Por último, se descarga un cliente FTP, puede usarse FileZilla <strong>“https://filezilla-project.org/”</strong>, se descarga e instala y se ingresan los datos del servidor como dirección IP, nombre de usuario y contraseña. De esta manera se puede realizar la trasferencia de archivos mediante FTP de manera exitosa. </p>
-                            </blockquote>
-
-                        </div>
-
-                        <P align="center"> <img src="../images/FtpCentos/11.png" srcset="../images/FtpCentos/11.png 1200w,"><br></P>
-
-                            <div class="bajar"></div>
                             
 
                 </div>
